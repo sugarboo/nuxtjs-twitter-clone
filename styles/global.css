@@ -1,0 +1,7 @@
+.default-transition {
+  @apply transition ease-in-out duration-300
+}
+
+.twitter-border-color {
+  @apply border-white dark:border-gray-700
+}
