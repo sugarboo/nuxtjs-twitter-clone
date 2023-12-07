@@ -6,7 +6,7 @@
         :key="`${item.title} - ${index}`"
       >
         <div>
-          <h2 class="font-bold text-gray-800 dark:text-white">
+          <h2 class="font-bold text-gray-800 dark:text-white/90">
             {{ item.title }}
           </h2>
           <p class="text-xs text-gray-400">
@@ -25,7 +25,7 @@
           <div class="flex">
             <img :src="item.image" :alt="item.name" class="w-10 h-10 rounded-full">
             <div class="flex flex-col ml-2">
-              <h1 class="text-sm font-bold text-gray-900 dark:text-white">
+              <h1 class="text-sm font-bold text-gray-900 dark:text-white/90">
                 {{ item.name }}
               </h1>
               <p class="text-xs text-gray-400">

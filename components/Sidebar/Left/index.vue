@@ -6,7 +6,9 @@
       >
         <nuxt-link to="/">
           <div class="w-8 h-8">
-            <LogoTwitter />
+            <UseDark v-slot="{ toggleDark }">
+              <LogoTwitter @click="toggleDark()" />
+            </UseDark>
           </div>
         </nuxt-link>
       </div>
@@ -33,8 +35,9 @@
 <script setup lang="ts">
 import type { VNodeTypes } from 'vue'
 
-import { HomeIcon } from '@heroicons/vue/solid'
-import { BellIcon, BookmarkIcon, DocumentTextIcon, DotsCircleHorizontalIcon, HashtagIcon, InboxIcon, UserIcon } from '@heroicons/vue/outline'
+import { BellIcon, BookmarkIcon, DocumentTextIcon, DotsCircleHorizontalIcon, HashtagIcon, HomeIcon, InboxIcon, UserIcon } from '@heroicons/vue/outline'
+
+import { UseDark } from '@vueuse/components'
 
 interface TabProps {
   name: string
