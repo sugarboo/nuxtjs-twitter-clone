@@ -34,7 +34,7 @@
             </div>
           </div>
           <div class="flex h-full">
-            <button class="px-4 py-2 text-xs font-bold text-white bg-black rounded-full dark:text-black dark:bg-white">
+            <button class="px-4 py-2 text-xs font-bold text-white bg-twitter-blue rounded-full dark:text-black dark:bg-white">
               Follow
             </button>
           </div>

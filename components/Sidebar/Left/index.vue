@@ -21,7 +21,7 @@
           class="group"
         >
           <template #icon>
-            <component :is="tab.component" class="group-hover:text-white/90" />
+            <component :is="tab.component" class="dark:text-white/90" />
           </template>
           <template #name>
             {{ tab.name }}
