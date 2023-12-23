@@ -4,4 +4,8 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
   ],
   devtools: { enabled: true },
+  runtimeConfig: {
+    jwtAccessSecret: '',
+    jwtRefreshSecret: '',
+  },
 })
