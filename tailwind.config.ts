@@ -17,5 +17,7 @@ export default <Partial<Config>>{
     },
   },
   darkMode: 'class',
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
 }

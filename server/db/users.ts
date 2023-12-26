@@ -23,7 +23,16 @@ function getUserByUsername(username: string) {
   })
 }
 
+function getUserById(id: number) {
+  return prisma.user.findUnique({
+    where: {
+      id,
+    },
+  })
+}
+
 export {
   createUser,
   getUserByUsername,
+  getUserById,
 }

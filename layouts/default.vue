@@ -1,6 +1,10 @@
 <template>
-  <div class="bg-white dark:bg-black/80">
-    <div class="min-h-full">
+  <div :class="{ dark: isDarkMode }" class="bg-white dark:bg-black/80">
+    <!-- Loading -->
+    <LoadingPage v-if="isAuthLoading" />
+
+    <!-- Main -->
+    <div v-else-if="user" class="min-h-full">
       <div class="grid grid-cols-12 mx-auto sm:px-6 lg:max-w-7xl lg:px-8 lg:gap-5">
         <!-- Left Sidebar -->
         <div class="hidden md:block xs-col-span-1 xl:col-span-2">
@@ -22,5 +26,23 @@
         </div>
       </div>
     </div>
+
+    <!-- Auth page -->
+    <AuthPage v-else />
   </div>
 </template>
+
+<script setup lang="ts">
+const isDarkMode = ref(false)
+const {
+  useAuthUser,
+  initAuth,
+  useIsAuthLoading,
+} = useAuth()
+const isAuthLoading = useIsAuthLoading()
+const user = useAuthUser()
+
+onBeforeMount(() => {
+  initAuth()
+})
+</script>

@@ -21,6 +21,24 @@ function generateRefreshToken(user: User) {
   )
 }
 
+function decodeAccessToken(token: string) {
+  try {
+    return jwt.verify(token, runtimeConfig.jwtAccessSecret)
+  }
+  catch (error) {
+    return null
+  }
+}
+
+function decodeRefreshToken(token: string) {
+  try {
+    return jwt.verify(token, runtimeConfig.jwtRefreshSecret)
+  }
+  catch (error) {
+    return null
+  }
+}
+
 function generateTokens(user: User) {
   const accessToken = generateAccessToken(user)
   const refreshToken = generateRefreshToken(user)
@@ -44,6 +62,8 @@ function sendRefreshToken(
 export {
   generateAccessToken,
   generateRefreshToken,
+  decodeAccessToken,
+  decodeRefreshToken,
   sendRefreshToken,
   generateTokens,
 }
